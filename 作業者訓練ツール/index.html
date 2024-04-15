@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<!--ここでタイトルを表示してcssを読み込む-->
+<head>
+	<title>Training_Tool</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="src/styles.css">
+</head>
+
+<!--ここからページの中身-->
+<body>
+	<div id="app">
+		<h1>No.1</h1>
+	</div>
+	<style>
+    .block {
+		border: 1px solid silver;
+    }
+	</style>
+	<!--問題画像を表示-->
+	<div class="block">
+  		<img id="sample"alt=”画像が表示されるまでしばらくお待ちください” width="500px"height="168px" style="display:block; margin: 0 auto;"></img>
+		<!--画像の中に8分割の枠を表示-->
+		<div class="top">
+			<canvas id="canvas" width="500px" alt=”画像の代わりとなるテキスト入力します2” height="168px" style="display:block; margin: 0 auto; position:relative; top:-170px">
+			<style>
+    			canvas {
+        			border: 1px solid silver;
+    			}
+			</style>
+		</div>
+		<!--チェックボタンを表示-->
+		<div class="checkButton">
+			<div class="checkButtonup" width="500px"style="display:flex;margin: 0 auto;justify-content: center;">
+				<label><input class="checks" type="checkbox" name="lang" >1</label>
+				<label><input class="checks" type="checkbox" name="lang" >2</label>
+				<label><input class="checks" type="checkbox" name="lang" >3</label>
+				<label><input class="checks" type="checkbox" name="lang" >4</label>	
+			</div>
+			<div class="checkButtondown" width="500px"style="display:flex;margin: 0 auto;justify-content: center;">
+				<label><input class="checks" type="checkbox" name="lang" >5</label>
+				<label><input class="checks" type="checkbox" name="lang" >6</label>
+				<label><input class="checks" type="checkbox" name="lang" >7</label>
+				<label><input class="checks" type="checkbox" name="lang" >8</label>
+			</div>
+			<div class="checkButtondown" width="500px"style="display:flex;margin: 0 auto;justify-content: center;">
+				<label><input id="checkAll" type="checkbox" name="lang" value="checkall">全て選択</label>
+			</div>
+		</div>
+	<!--回答ボタンを表示-->
+	</div>
+	<div class="answerButton">
+		<button type="button"class="ans_btn"id="quality">良品</button>
+		<button type="button"class="ans_btn"id="defective">不良品</button>
+		<!--10問ごとの成績表示-->
+		<div id="popup-wrapper">
+			<div id="popup-inside">
+				<div id="message">
+					<div><button type="button"id="close">問題に戻る</button></div>
+					<h2>10問の成績</h2>
+					<canvas id="board" width="600px" height="500x"alt=”画像の代わりとなるテキスト入力します2” ></canvas>
+				</div> 
+			</div>
+		</div>
+	</div>
+	<!--1問ごとの成績表示-->
+	<div id="answer_log"></div>
+	<div id="answer_img"></div>
+	<script type="module" src="src/index.js">
+	</script>
+</body>
+
+</html>
